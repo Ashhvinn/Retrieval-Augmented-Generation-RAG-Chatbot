@@ -70,6 +70,8 @@ mkdir -p data
 echo "Dataset directory created. Please place your knowledge base files in the 'data/' directory."
 ```
 
+---
+
 ## **Usage**
 
 ### **Running the Chatbot**
@@ -89,6 +91,8 @@ Start the chatbot application:
 ```bash
 python app.py
 ```
+
+---
 
 ## **Model Details**
 
@@ -151,6 +155,9 @@ def generate_response(user_query):
 response = generate_response("What is the capital of France?")
 print(f"Chatbot Response: {response}")
 ```
+
+---
+
 
 ## **Vector Database Integration with Pinecone**
 
@@ -217,6 +224,9 @@ retrieved_docs = [item["metadata"]["text"] for item in query_result["matches"]]
 print("Retrieved Documents:", retrieved_docs)
 ```
 
+---
+
+
 ## **Dataset and Retrieval**
 ### **Dataset Structure**
 Knowledge Base: A collection of documents or textual data used for retrieval.
@@ -235,12 +245,15 @@ query_vector = model.encode(query)
 query_result = index.query(vector=query_vector, top_k=5)
 relevant_docs = [knowledge_base[item['id']] for item in query_result['matches']]
 ```
+
 ---
 
 ## **Evaluation Metrics**
 - **Precision and Recall:** Evaluate the retrieval accuracy.
 - **BLEU Score:** Assess the fluency and relevance of generated responses.
 - **Human Evaluation:** Rate responses based on coherence and correctness.
+
+---
 
 ## **Challenges and Future Enhancements**
 ### **Challenges**
@@ -252,6 +265,7 @@ relevant_docs = [knowledge_base[item['id']] for item in query_result['matches']]
 - **Multimodal Support:** Extend to handle images, audio, or videos.
 - **Deployment:** Optimize for real-time performance in web or mobile applications.
 
+---
 
 
 
